@@ -1,0 +1,1 @@
+print("Ni untuk conteng2 jer")
