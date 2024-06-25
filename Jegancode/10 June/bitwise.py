@@ -1,0 +1,74 @@
+# to represent binaries in python
+# we use 0b
+# why we use 0b
+# so that computer reads one zero one
+# instead of reading 1 hundred and one
+# because one zero one is equals to RM5 not RM101
+givenbinary = 0b101
+
+# filepermission = 755
+filepermission = 0b111101001
+print(filepermission) # auto convert binary to decimal and print it
+# you can use built in function called bin to print it as binary
+print(bin(filepermission))
+number = 97409
+print(bin(number))
+
+# filepermission holds a binary number and I am interested
+# only in some bits not all
+# for example i am interested only in permission belongs to the group
+# which means i am interested in 4, 5, 6 bits only
+# Feature Engineering
+mask = 0b000111000
+# original            111101001       &
+# mask                000111000
+# result              000101000
+# the & operator is used for extracting the bits we are 
+# interested
+# let us shift to left 3 times
+# result              000000101        >> 3
+
+print(bin((filepermission & mask) >> 3)) # give reult in binary
+print((filepermission & mask) >> 3) # give result in decimal
+
+
+# I want to set 4, 5, 6 bits to 1
+# the other bits remain as it is then we use or operator
+# original            111010101       | # or
+# mask                000111000
+# result              111111101
+filepermission = 0b111010101
+mask = 0b000111000
+print(bin(filepermission | mask))
+# Using or operator you cannot set the bits to 0
+
+
+# xor operator
+#       and       or    xor
+# 1 1    1        1     0
+# 1 0    0        1     1
+# 0 1    0        1     1
+# 0 0    0        0     0
+
+content = 0b10101010    # J
+key = 0b00111100        # s
+# I am going to encrypt J using s
+# To decrpyt you must know s
+encryptedcontent = content ^ key
+print("Original content  ", bin(content))
+print("Encrypted content ", bin(encryptedcontent))
+
+decryptedcontent = encryptedcontent ^ key
+print("Original content  ", bin(content))
+print("Decrypted content ", bin(decryptedcontent))
+
+# 1s compliment = flip the bits from 1 to 0 or 0 to 1
+givennumber = 5         #  101
+print(bin(~givennumber)) # 1 10  -6
+print(~givennumber)
+# get the 1s compliment and add 1
+print(bin(~givennumber + 1))
+print(~givennumber + 1)
+
+print(-givennumber)   # unary negative
+print(+givennumber)   # unary positive

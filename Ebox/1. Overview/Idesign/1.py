@@ -1,0 +1,1 @@
+print("Welcome to Amphi Event management system")
