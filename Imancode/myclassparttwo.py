@@ -93,3 +93,10 @@ zul.info()
 print(zul)
 # when we try to print teh object using print function
 # if that class has __str__ method it will be executed automatically
+
+# The __str__(self) method in Python is a special method that 
+# is used to define a human-readable string representation of 
+# an object. When you implement the __str__(self) method in a 
+# class, you are essentially telling Python how you want instances 
+# of that class to be represented as strings. This can be particularly useful 
+# for debugging, logging, or presenting object information in a readable format.
