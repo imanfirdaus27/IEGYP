@@ -1,0 +1,9 @@
+Product|Quantity|Price
+Television|10|1455.55
+Television|1|12000.0
+1|1222|22332.0
+iman|150|1450.21
+sd|2|22222.0
+radio|12|1455.55
+Naqib|1|100000000000000.0
+nsdjvs|2|3333.0
