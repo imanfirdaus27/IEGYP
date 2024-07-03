@@ -101,3 +101,28 @@ reversed = ((x // 100) % 10) * 100 + reversed #98500
 reversed = ((x // 1000) % 10) * 10 + reversed #98560
 reversed = (x // 10000) + reversed #98567
 print(reversed)
+
+
+str_numbers = input()
+str_numbers = str_numbers.split(",")
+print(str_numbers)
+numbers = [int(str_number)for str_number in str_numbers]
+print(numbers)
+numbers = map(int, str_numbers)
+# print(list(numbers))
+print(set(list(numbers)))
+
+# fruits = [{"apple", 10, 2.5}, {"orange", 5, 1.5}]
+# print(fruits)
+# fruits = {"apple", 10, 2.5, ("orange", "mango")}
+# print(fruits)
+# fruits = {"apple", 10, 2.5, ["orange", "mango"]}
+# print(fruits)
+
+nestedlist = [
+    [1,2,3],
+    [3,4,5],
+    [1,2,3]
+]
+nestedlist = [tuple(item) for item in nestedlist]
+print(set(nestedlist))
