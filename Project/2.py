@@ -109,6 +109,7 @@ def cardetails(filepath, car_id):
                 print(f"{'Price/day':<15}: {details['Price/day']}")
                 print("=" * 80)
                 print(f"{'Total:RM2000':>80}")
+                print("=" * 80)
 
     except FileNotFoundError:
         print(f"Error: File '{filepath}' not found.")
@@ -138,3 +139,4 @@ cardetails(filename2,carId) # return to cardetails function
 
 # next step berapa hari dia pakai
 # then kira total
+# then buat deposit
