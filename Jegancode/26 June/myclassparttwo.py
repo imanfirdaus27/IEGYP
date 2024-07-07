@@ -1,7 +1,7 @@
 class Student:
 
     # Usually init method is used to declare properties    
-    # Difference between the variables and propertis
+    # Difference between the variables and properties
     # 1) Properties are nothing but varibles but inside the class
     # 2) Properties are always prefix by the first parameter
     # 3) If you did not declare with prefix the that will become

@@ -12,6 +12,14 @@ def customerdetails(filepath, customer_id):
 
                 print("=" * 80)
 
+                title = "SOCAR"
+                print(f"{title:^80}")
+
+                title = "RENTAL INVOICE"
+                print(f"{title:^80}")
+
+                print("=" * 80)
+
                 title = "CUSTOMER DETAILS"
                 print(f"{title:^80}")
                 print("=" * 80)
@@ -20,7 +28,6 @@ def customerdetails(filepath, customer_id):
                 print(f"{'Address':<15}: {details['Address']}")
                 print(f"{'Phone':<15}: {details['Phone']}")
                 print(f"{'IC No':<15}: {details['IC No']}")
-                print(f"{'Balance':<15}: {details['Balance']}")
                 print(f"{'Startdate':<15}: {details['Startdate']}")
                 print(f"{'Enddate':<15}: {details['Enddate']}")
                 print("=" * 80)
@@ -93,26 +100,30 @@ def calculate_rental_days(start_date, end_date):
     rental_days = (end_date - start_date).days + 1
     return rental_days
 
-# Prompt the user to enter the customer ID
-customer_id = input("Please enter the customer ID: ")
+def main():
+    # Prompt the user to enter the customer ID
+    customer_id = input("Please enter the customer ID: ")
 
-# Filepath to the customer details text file
-filename1 = "customerdetails.txt"
-# Get the start date and end date for the customer's rental period
-start_date, end_date = customerdetails(filename1, customer_id)
+    # Filepath to the customer details text file
+    filename1 = "customerdetails.txt"
+    # Get the start date and end date for the customer's rental period
+    start_date, end_date = customerdetails(filename1, customer_id)
 
-if start_date and end_date:
-    # Get the CarID associated with the customer
-    carId = getcarID(filename1, customer_id)
+    if start_date and end_date:
+        # Get the CarID associated with the customer
+        carId = getcarID(filename1, customer_id)
 
-    # Calculate the number of rental days
-    rental_days = calculate_rental_days(start_date, end_date)
+        # Calculate the number of rental days
+        rental_days = calculate_rental_days(start_date, end_date)
 
-    # Filepath to the car listing text file
-    filename2 = "carlisting.txt"
-    # Display the car details and calculate the total rental payment
-    cardetails(filename2, carId, rental_days)
-else:
-    print("Unable to retrieve start date and end date for the rental period.")
+        # Filepath to the car listing text file
+        filename2 = "carlisting.txt"
+        # Display the car details and calculate the total rental payment
+        cardetails(filename2, carId, rental_days)
+    else:
+        print("Unable to retrieve start date and end date for the rental period.")
+    
+if __name__ == "__main__":
+    main()
 
-#
+
