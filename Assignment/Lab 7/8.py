@@ -35,8 +35,33 @@ class Inventory:
         }
         print(f"Item with ID {id} added successfully.")
 
+    def updateItem(self):
+        id = input("Enter the id of the item to update: ")
+        if id in self.item_dict:
+            name = input("Enter the new product name: ")
+            availableQuantity = int(input("Enter the new available quantity: "))
+            price = float(input("Enter the new price: "))
+            # Update item details in the dictionary
+            self.item_dict[id] = {
+                "name": name,
+                "availableQuantity": availableQuantity,
+                "price": price
+            }
+            print(f"Item with ID {id} updated successfully.")
+
+    def checkItem(self):
+        id = input("Enter the id of the item to check: ")
+        if id in self.item_dict:
+            print(f"Item details for ID {id}:")
+            print(f"Name: {self.item_dict[id]['name']}")
+            print(f"Available Quantity: {self.item_dict[id]['availableQuantity']}")
+            print(f"Price: {self.item_dict[id]['price']}")
+        else:
+            print(f"Item with ID {id} not found.")
+
     def __str__(self):
         result = "Inventory:\n"
+
         for id, details in self.item_dict.items():
             result += f"ID: {id}, Name: {details['name']}, Quantity: {details['availableQuantity']}, Price: {details['price']}\n"
         return result
@@ -67,3 +92,15 @@ inventory.addItem()
 
 # Print updated inventory
 print(inventory)
+
+# Update an item
+
+inventory.updateItem()
+
+# Print updated inventory
+
+print(inventory)
+
+# Check item details
+
+inventory.checkItem()
