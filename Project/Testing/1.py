@@ -1,10 +1,4 @@
-# def printdetails(filename):
-#     try:
-#         with open(filename, "rt") as filehandler:
-#             for line in filehandler:
-#                 print(line.strip())
-#     except Exception as e:
-#         print("Something went wrong when we print the details:", e)
+
 
 # def printDetails(filename):
 #     try:
